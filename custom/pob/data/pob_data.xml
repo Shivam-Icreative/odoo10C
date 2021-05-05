@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+		
+		<record id="wk_sale_team" model="crm.team">
+            <field name="name">Prestashop   </field>
+            <field name="code">PS</field>
+            <field name="use_quotations">1</field>
+            <field name="use_invoices">1</field>
+        </record>
+
+
+    </data>
+</odoo>
+		

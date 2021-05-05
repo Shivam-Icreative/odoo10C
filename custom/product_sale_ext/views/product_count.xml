@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_product_sale_list_pos" model="ir.actions.act_window">
+        <field name="name">POS Order Lines</field>
+        <field name="res_model">pos.order.line</field>
+        <field name="context">{'search_default_product_id': [active_id], 'default_product_id': active_id}</field>
+    </record>
+
+    <record model="ir.ui.view" id="product_form_view_sale_order_button_pos">
+        <field name="name">product.product.sale.order.pos</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="groups_id" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" name="%(action_product_sale_list_pos)d" type="action" icon="fa-usd">
+                    <field string="Ventas POS" name="sales_count_pos" widget="statinfo" />
+                </button>
+                <button class="oe_stat_button" icon="fa-check">
+                    <field string="Ventas Totales" name="sales_count_total" widget="statinfo" />
+                </button>
+            </div>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="product_template_form_view_sale_order_button_pos">
+        <field name="name">product.template.sale.order.button.pos</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="groups_id" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" name="action_view_sales_pos" type="object" icon="fa-usd">
+                    <field string="Ventas POS" name="sales_count_pos" widget="statinfo" />
+                </button>
+                <button class="oe_stat_button" icon="fa-check">
+                    <field string="Ventas Totales" name="sales_count_total" widget="statinfo" />
+                </button>
+            </div>
+        </field>
+    </record>
+
+    <record id="view_all_product_pivot" model="ir.ui.view">
+         <field name="name">producto.report.pivot</field>
+         <field name="model">producto.report</field>
+         <field name="arch" type="xml">
+             <pivot string="Producto Analisis" disable_linking="True">
+                 <field name="categ_id" type="row"/>
+             </pivot>
+         </field>
+    </record>
+
+    <record id="action_report_sale_product_alll" model="ir.actions.act_window">
+        <field name="name">Análisis General Ventas</field>
+        <field name="res_model">producto.report</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">pivot,graph</field>
+    </record>
+
+    <menuitem id="menu_general_ledger_ventas" name="Análisis General Ventas" parent="sales_team.menu_sale_report" action="action_report_sale_product_alll" />
+
+</odoo>

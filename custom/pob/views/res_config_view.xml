@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_pob_config_settings" model="ir.ui.view">
+            <field name="name">pob settings</field>
+            <field name="model">pob.config.settings</field>
+            <field name="arch" type="xml">
+                <form string="Configure POB" version="7.0" class="oe_form_configuration">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+                    <separator string="POB Extra Features"/>
+                    <group>
+                        <label for="id" string="POB: Extensions"/>
+                        <div>
+                            <div>
+                                <field name="module_pob_extension_stock" class="oe_inline"/>
+                                <label for="module_pob_extension_stock"/>
+                            </div>
+                            <div>
+                                <field name="module_pob_extension_multilang" class="oe_inline"/>
+                                <label for="module_pob_extension_multilang"/>
+                            </div>
+                        </div>
+                    </group>
+                    <separator string="Default Products used by POB"/>
+                    <p>
+                        Select Service Type Product to be used by POB, when exporting Order from Pretsashop to Odoo.
+                    </p>
+                    <group>
+                        <label for="id" string="Service Products"/>
+                        <div >
+                            <div >
+                                <field name="pob_discount_product" class="oe_inline" widget="selection"/>
+                                <label string="used for Discount purposes"/>
+                            </div>
+                        </div>
+                    </group>
+                    
+                </form>
+            </field>
+        </record>
+
+        <record id="action_pob_config" model="ir.actions.act_window">
+            <field name="name">Configure POB</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pob.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+        <menuitem id="menu_pob_config" name="POB Configuration" parent="pob.menu_id_core_setting"
+            sequence="2" action="action_pob_config"/>
+
+    </data>
+</odoo>

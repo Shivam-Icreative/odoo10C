@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="PosTicket">
+        <t t-jquery="[t-esc='widget.pos.company.name']" t-operation="after">
+            <t t-if="order.attributes.client">
+                <br/><br/>
+                <span class="customer_title">Datos del Cliente</span><br />
+                Código: <t t-esc="order.attributes.client.ref ? order.attributes.client.ref : ''"/><br />
+                Name: <t t-esc="order.attributes.client.name ? order.attributes.client.name : ''"/><br />
+                VAT: <t t-esc="order.attributes.client.vat ? order.attributes.client.vat : ''"/><br />
+                Address: <t t-esc="order.attributes.client.street ? order.attributes.client.street : ''"/><br />
+                Población: <t t-esc="order.attributes.client.state_id ? order.attributes.client.state_id : ''"/><br />
+                Móvil: <t t-esc="order.attributes.client.mobile ? order.attributes.client.mobile : ''"/><br /><br />
+
+                <span class="customer_title">Datos del Usuario</span>
+            </t>
+        </t>
+    </t>
+</templates>

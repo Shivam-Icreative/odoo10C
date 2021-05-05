@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="b92_partner_num" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='ref']" position="after">
+                <button string="Generar Referencia Interna" type="object" name="b92_generate_num"  attrs="{'invisible':[('customer', '!=', True)]}" />
+            </xpath>
+            <xpath expr="//field[@name='ref']" position="replace">
+                <field name="ref" attrs="{'readonly':[('customer', '=', True)]}" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

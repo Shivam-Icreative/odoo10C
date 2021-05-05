@@ -1,0 +1,1036 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pob
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-16 07:49+0000\n"
+"PO-Revision-Date: 2015-06-16 15:38+0530\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: pob
+#: view:product.template:pob.pob_product_template_update_view
+msgid "(On prestashop, it appears in the body of the product page.)"
+msgstr " (En prestashop, aparece en cuerpo de página del Producto )"
+
+#. module: pob
+#: view:product.template:pob.pob_product_template_update_view
+msgid ""
+"(On prestashop, it appears in the product list(s), and on the top of the "
+"product page.)"
+msgstr ""
+"  (En prestashop, aparece en cuerpo de página del Producto y en superior de "
+"p[agina del Producto )"
+
+#. module: pob
+#: help:prestashop.configure,api_key:0
+msgid "32 bit key like:-'BVWPFFYBT97WKM959D7AVVD0M4815Y1L'"
+msgstr "32 bit key like:-'BVWPFFYBT97WKM959D7AVVD0M4815Y1L' "
+
+#. module: pob
+#: view:prestashop.configure:pob.prestashop_configure_form
+msgid "A 32 bit key(e.g:-'BVWPFFYBT97WKM959D7AVVD0M4815Y1L')"
+msgstr "A 32 bit key(e.g:-'BVWPFFYBT97WKM959D7AVVD0M4815Y1L')"
+
+#. module: pob
+#: model:ir.model,name:pob.model_account_voucher
+msgid "Accounting Voucher"
+msgstr "Comprobantes contables"
+
+#. module: pob
+#: field:prestashop.configure,active:0
+msgid "Active"
+msgstr "Activar"
+
+#. module: pob
+#: code:addons/pob/extra_functions.py:391
+#, python-format
+msgid "Active ID is not set in Context"
+msgstr "  ID  de Activar no establecer en Contexto"
+
+#. module: pob
+#: view:pob.config.settings:pob.view_pob_config_settings
+msgid "Apply"
+msgstr " Aplicar"
+
+#. module: pob
+#: field:prestashop.configure,api_key:0
+msgid "Authentication key"
+msgstr "Authentication key"
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid ""
+"By clicking on the buttons,\n"
+"                                    you will initiate the synchronizations\n"
+"                                    with Prestashop."
+msgstr ""
+" Por hacer clic en botón,\n"
+"                                   uste intiará xincronización \n"
+"                                    con Prestashop."
+
+#. module: pob
+#: view:pob.config.settings:pob.view_pob_config_settings
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: pob
+#: code:addons/pob/extra_functions.py:547
+#, python-format
+msgid "Cannot Cancel a Shipped Order"
+msgstr "  No puede cancelar el transportado pedido"
+
+#. module: pob
+#: code:addons/pob/override_functions.py:460
+#, python-format
+msgid "Cannot cancel this sales order!"
+msgstr "   No puede cancelar pedido de venta"
+
+#. module: pob
+#: model:ir.model,name:pob.model_delivery_carrier
+msgid "Carrier"
+msgstr "Transportista"
+
+#. module: pob
+#: view:prestashop.category:pob.prestashop_category_tree
+msgid "Categories"
+msgstr " Categorías "
+
+#. module: pob
+#: model:ir.ui.menu,name:pob.category_mapping_menu_id
+msgid "Category Mapping"
+msgstr " Asignación de categoría"
+
+#. module: pob
+#: field:prestashop.category,category_name:0 field:prestashop.category,name:0
+msgid "Category Name"
+msgstr "  Nombre de categoría"
+
+#. module: pob
+#: field:sale.order,channel:0
+msgid "Channel name"
+msgstr "  Nombre De canal"
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid "Click to Export / Update data on PrestaShop :"
+msgstr "  Hacer clic a Exportar / ACtualizar data en Prestashop:"
+
+#. module: pob
+#: view:pob.message:pob.pob_message_form
+msgid "Close"
+msgstr "  Abrir"
+
+#. module: pob
+#: model:ir.actions.act_window,name:pob.action_pob_config
+#: view:pob.config.settings:pob.view_pob_config_settings
+msgid "Configure POB"
+msgstr " Configurar POB"
+
+#. module: pob
+#: code:addons/pob/extra_functions.py:54
+#: code:addons/pob/override_functions.py:603 code:addons/pob/pob.py:104
+#: code:addons/pob/pob.py:251 code:addons/pob/pob.py:295
+#: code:addons/pob/pob.py:366 code:addons/pob/pob.py:585
+#: code:addons/pob/pob.py:635 code:addons/pob/pob.py:870
+#: code:addons/pob/pob.py:1143 code:addons/pob/pob.py:1278
+#, python-format
+msgid "Connection needs one Active Configuration setting."
+msgstr " Las necesidades de conexión en un Ajustes de Activo configuración "
+
+#. module: pob
+#: model:ir.ui.menu,name:pob.menu_id_core_setting
+msgid "Core Settings"
+msgstr "  Ajustes básicos"
+
+#. module: pob
+#: field:force.done,create_uid:0 field:pob.config.settings,create_uid:0
+#: field:pob.message,create_uid:0 field:prestashop.category,create_uid:0
+#: field:prestashop.configure,create_uid:0
+#: field:prestashop.customer,create_uid:0 field:prestashop.order,create_uid:0
+#: field:prestashop.product,create_uid:0
+#: field:prestashop.product.attribute,create_uid:0
+#: field:prestashop.product.attribute.value,create_uid:0
+#: field:prestashop.product.template,create_uid:0
+#: field:prestashoperp.sync.now,create_uid:0
+msgid "Created by"
+msgstr "  Creado Por"
+
+#. module: pob
+#: field:force.done,create_date:0 field:pob.config.settings,create_date:0
+#: field:pob.message,create_date:0 field:prestashop.category,create_date:0
+#: field:prestashop.configure,create_date:0
+#: field:prestashop.customer,create_date:0
+#: field:prestashop.order,create_date:0 field:prestashop.product,create_date:0
+#: field:prestashop.product.attribute,create_date:0
+#: field:prestashop.product.attribute.value,create_date:0
+#: field:prestashop.product.template,create_date:0
+#: field:prestashoperp.sync.now,create_date:0
+msgid "Created on"
+msgstr "  Creado en"
+
+#. module: pob
+#: code:addons/pob/override_functions.py:399
+#, python-format
+msgid "Customer Invoices"
+msgstr "  Factura De Cliente"
+
+#. module: pob
+#: model:ir.ui.menu,name:pob.customer_mapping_menu_id
+msgid "Customer Mapping"
+msgstr "   Asignación de cliente"
+
+#. module: pob
+#: field:prestashop.customer,customer_name:0 field:prestashop.customer,name:0
+msgid "Customer Name"
+msgstr " Nombre De Cliente"
+
+#. module: pob
+#: view:prestashop.customer:pob.prestashop_customer_tree
+msgid "Customers"
+msgstr "  Clientes"
+
+#. module: pob
+#: field:prestashop.product.template,default_attribute:0
+msgid "Default Attribute is set"
+msgstr "Por Defecto establecer atributo"
+
+#. module: pob
+#: field:prestashop.configure,pob_default_category:0
+msgid "Default Category"
+msgstr " Por Defecto Categoría"
+
+#. module: pob
+#: field:prestashop.configure,pob_default_lang:0
+msgid "Default Language"
+msgstr " Por Defecto Lengua"
+
+#. module: pob
+#: view:pob.config.settings:pob.view_pob_config_settings
+msgid "Default Products used by POB"
+msgstr " Por Defecto Productos han usado por POB"
+
+#. module: pob
+#: field:pob.config.settings,pob_delivery_product:0
+msgid "Delivery Product"
+msgstr " Producto de entrega"
+
+#. module: pob
+#: view:product.template:pob.pob_product_template_update_view
+msgid "Description"
+msgstr " Descripción"
+
+#. module: pob
+#: field:pob.config.settings,pob_discount_product:0
+msgid "Discount Product"
+msgstr " Producto de descuento"
+
+#. module: pob
+#: code:addons/pob/extra_functions.py:54 code:addons/pob/extra_functions.py:56
+#: code:addons/pob/override_functions.py:603
+#: code:addons/pob/override_functions.py:605 code:addons/pob/pob.py:51
+#: code:addons/pob/pob.py:69 code:addons/pob/pob.py:104
+#: code:addons/pob/pob.py:106 code:addons/pob/pob.py:251
+#: code:addons/pob/pob.py:253 code:addons/pob/pob.py:295
+#: code:addons/pob/pob.py:297 code:addons/pob/pob.py:305
+#: code:addons/pob/pob.py:309 code:addons/pob/pob.py:366
+#: code:addons/pob/pob.py:368 code:addons/pob/pob.py:585
+#: code:addons/pob/pob.py:587 code:addons/pob/pob.py:635
+#: code:addons/pob/pob.py:637 code:addons/pob/pob.py:870
+#: code:addons/pob/pob.py:872 code:addons/pob/pob.py:1143
+#: code:addons/pob/pob.py:1145 code:addons/pob/pob.py:1278
+#: code:addons/pob/pob.py:1280
+#, python-format
+msgid "Error"
+msgstr "Error as"
+
+#. module: pob
+#: code:addons/pob/extra_functions.py:64
+#: code:addons/pob/override_functions.py:613 code:addons/pob/pob.py:114
+#: code:addons/pob/pob.py:261 code:addons/pob/pob.py:376
+#: code:addons/pob/pob.py:595 code:addons/pob/pob.py:645
+#: code:addons/pob/pob.py:880 code:addons/pob/pob.py:1153
+#: code:addons/pob/pob.py:1157 code:addons/pob/pob.py:1161
+#: code:addons/pob/pob.py:1288
+#, python-format
+msgid "Error %s"
+msgstr "Error %s"
+
+#. module: pob
+#: code:addons/pob/pob.py:1157 code:addons/pob/pob.py:1161
+#, python-format
+msgid "Error in Creating blank schema for product_options"
+msgstr "Error en crear blanco esquema para opcion_de Producto"
+
+#. module: pob
+#: code:addons/pob/extra_functions.py:547 code:addons/pob/pob.py:83
+#: code:addons/pob/pob.py:89 code:addons/pob/pob.py:1332
+#, python-format
+msgid "Error!"
+msgstr "Error!"
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid "Export   Products"
+msgstr "Export   Productos"
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid "Export / Update Dimension and their Values to Prestashop"
+msgstr "Exportar/ Actualizar  dimensióny su valores a Prestashop ."
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid "Export Attribute and Values"
+msgstr "Exportar Attributos y valor "
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid "Export Categories"
+msgstr "Exportar  Categoiás"
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid "Export Products"
+msgstr "Exportar Productos"
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid "Exporting items will export all your items to PrestaShop"
+msgstr "Exportando Artículos exportará todos sus artículos a Prestashop"
+
+#. module: pob
+#: view:prestashop.configure:pob.prestashop_configure_form
+msgid "Fetch PrestaShop Language"
+msgstr " Taer Lengua de Prestashop"
+
+#. module: pob
+#: code:addons/pob/override_functions.py:461
+#, python-format
+msgid "First cancel all invoices attached to this sales order."
+msgstr ""
+"Primero cancelear todos Facturas que han assignado a este pedido del vender"
+
+#. module: pob
+#: model:res.groups,comment:pob.group_pob_connector_manager
+msgid "Full Access on POB Connector."
+msgstr " Completa Acesso a POB connector"
+
+#. module: pob
+#: field:force.done,id:0 field:pob.config.settings,id:0 field:pob.message,id:0
+#: field:prestashop.category,id:0 field:prestashop.configure,id:0
+#: field:prestashop.customer,id:0 field:prestashop.order,id:0
+#: field:prestashop.product,id:0 field:prestashop.product.attribute,id:0
+#: field:prestashop.product.attribute.value,id:0
+#: field:prestashop.product.template,id:0 field:prestashoperp.sync.now,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: pob
+#: code:addons/pob/extra_functions.py:411
+#, python-format
+msgid "INV: %s"
+msgstr "INV: %s"
+
+#. module: pob
+#: code:addons/pob/extra_functions.py:64
+#: code:addons/pob/override_functions.py:613 code:addons/pob/pob.py:114
+#: code:addons/pob/pob.py:261 code:addons/pob/pob.py:376
+#: code:addons/pob/pob.py:595 code:addons/pob/pob.py:645
+#: code:addons/pob/pob.py:880 code:addons/pob/pob.py:1153
+#: code:addons/pob/pob.py:1288
+#, python-format
+msgid "Invalid Information"
+msgstr "Inválido Información"
+
+#. module: pob
+#: model:ir.model,name:pob.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid "It will export all your new categories on Odoo to PrestaShop"
+msgstr "Este exportará su nueva categorías en Odoo a Prestahop"
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid "It will export all your new products on Odoo to PrestaShop"
+msgstr " Este exportará su nueva Productos en Odoo a Prestahop"
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid ""
+"It will update,if any(Is Synchronized=no), all your exported categories on "
+"Prestashop from Odoo"
+msgstr ""
+" Este Exportará ,si alguno (Es sincronizar=no), todos su han exportado "
+"categoría en Prestashop desde Odoo"
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid ""
+"It will update,if any(Is Synchronized=no), all your exported products on "
+"Prestashop from Odoo"
+msgstr ""
+"  Este Exportará ,si alguno (Es sincronizar=no), todos su han exportado "
+"Producto en Prestashop desde Odoo"
+
+#. module: pob
+#: field:prestashop.configure,pob_default_lang_code:0
+msgid "Language Locale Code"
+msgstr "  Local Código de Lengua"
+
+#. module: pob
+#: field:force.done,write_uid:0 field:pob.config.settings,write_uid:0
+#: field:pob.message,write_uid:0 field:prestashop.category,write_uid:0
+#: field:prestashop.configure,write_uid:0
+#: field:prestashop.customer,write_uid:0 field:prestashop.order,write_uid:0
+#: field:prestashop.product,write_uid:0
+#: field:prestashop.product.attribute,write_uid:0
+#: field:prestashop.product.attribute.value,write_uid:0
+#: field:prestashop.product.template,write_uid:0
+#: field:prestashoperp.sync.now,write_uid:0
+msgid "Last Updated by"
+msgstr " Última actualización de"
+
+#. module: pob
+#: field:force.done,write_date:0 field:pob.config.settings,write_date:0
+#: field:pob.message,write_date:0 field:prestashop.category,write_date:0
+#: field:prestashop.configure,write_date:0
+#: field:prestashop.customer,write_date:0 field:prestashop.order,write_date:0
+#: field:prestashop.product,write_date:0
+#: field:prestashop.product.attribute,write_date:0
+#: field:prestashop.product.attribute.value,write_date:0
+#: field:prestashop.product.template,write_date:0
+#: field:prestashoperp.sync.now,write_date:0
+msgid "Last Updated on"
+msgstr "  Última actualización en"
+
+#. module: pob
+#: model:res.groups,comment:pob.group_pob_connector_user
+msgid "Limited Access on POB Connector."
+msgstr " límite Acesso en POB connector"
+
+#. module: pob
+#: model:res.groups,name:pob.group_pob_connector_manager
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: pob
+#: code:addons/pob/extra_functions.py:104
+#: code:addons/pob/override_functions.py:653 code:addons/pob/pob.py:274
+#: code:addons/pob/pob.py:323 code:addons/pob/pob.py:403
+#: code:addons/pob/pob.py:613 code:addons/pob/pob.py:664
+#: code:addons/pob/pob.py:906 code:addons/pob/pob.py:1201
+#: code:addons/pob/pob.py:1346 code:addons/pob/res_config.py:27
+#: view:pob.message:pob.pob_message_form field:pob.message,text:0
+#, python-format
+msgid "Message"
+msgstr " Mensaje"
+
+#. module: pob
+#: code:addons/pob/pob.py:305 code:addons/pob/pob.py:309
+#, python-format
+msgid "Message:  %s"
+msgstr "Mensaje:  %s"
+
+#. module: pob
+#: field:pob.config.settings,module_pob_extension_multilang:0
+msgid "Multi-Language Synchronization"
+msgstr "  SIncronización de Multi-lengua"
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid "NOTE :"
+msgstr "NOTA :"
+
+#. module: pob
+#: view:prestashop.configure:pob.prestashop_configure_form
+msgid "NOTE:"
+msgstr "NOTA:"
+
+#. module: pob
+#: view:prestashop.category:pob.prestashop_category_form
+msgid "New Category"
+msgstr "Nueva  Categoría"
+
+#. module: pob
+#: view:prestashop.customer:pob.prestashop_customer_form
+msgid "New Customer"
+msgstr "  Nuevo Cliente"
+
+#. module: pob
+#: view:prestashop.order:pob.prestashop_order_form
+msgid "New Mapping"
+msgstr " Nueva Asignación "
+
+#. module: pob
+#: selection:prestashop.category,need_sync:0
+#: selection:prestashop.customer,need_sync:0
+#: selection:prestashop.product,need_sync:0
+#: selection:prestashop.product.attribute,need_sync:0
+#: selection:prestashop.product.attribute.value,need_sync:0
+#: selection:prestashop.product.template,need_sync:0
+msgid "No"
+msgstr "No"
+
+#. module: pob
+#: model:res.groups,name:pob.group_pob_connector_no_body
+msgid "No Body"
+msgstr "No Cuerpo"
+
+#. module: pob
+#: model:res.groups,comment:pob.group_pob_connector_no_body
+msgid "Not Intended to use POB"
+msgstr "  Nadie  deseado a usar POB"
+
+#. module: pob
+#: field:prestashop.order,object_name:0
+msgid "Object"
+msgstr " Objetivo"
+
+#. module: pob
+#: selection:sale.order,channel:0
+msgid "Openerp"
+msgstr "Openerp"
+
+#. module: pob
+#: field:prestashop.product.attribute,erp_id:0
+#: field:prestashop.product.attribute.value,erp_attr_id:0
+msgid "Openerp`s Attribute Id"
+msgstr " Openerp`s ID de atributo"
+
+#. module: pob
+#: field:prestashop.product.attribute.value,erp_id:0
+msgid "Openerp`s Attribute Value Id"
+msgstr " Openerp`s ID de atributo valor"
+
+#. module: pob
+#: field:prestashop.category,erp_category_id:0
+msgid "Openerp`s Category Id"
+msgstr " Openerp`s ID de categoría"
+
+#. module: pob
+#: field:prestashop.customer,erp_customer_id:0
+msgid "Openerp`s Customer Id"
+msgstr " Openerp`s ID de cliente"
+
+#. module: pob
+#: field:prestashop.order,erp_id:0
+msgid "Openerp`s Order Id"
+msgstr " Openerp`s ID de Pedido"
+
+#. module: pob
+#: field:prestashop.product,erp_product_id:0
+msgid "Openerp`s Product Id"
+msgstr " Openerp`sID de Producto"
+
+#. module: pob
+#: field:prestashop.product,erp_template_id:0
+#: field:prestashop.product.template,erp_template_id:0
+msgid "Openerp`s Template Id"
+msgstr " Openerp`s ID de Pantilla"
+
+#. module: pob
+#: selection:prestashop.order,object_name:0
+msgid "Order"
+msgstr " Pedido"
+
+#. module: pob
+#: field:prestashop.order,name:0
+msgid "Order Ref Name"
+msgstr " Nombre de Pedido Referncía"
+
+#. module: pob
+#: model:ir.ui.menu,name:pob.order_mapping_menu_id
+msgid "Orders Mapping"
+msgstr "  Asignación  De Pedido"
+
+#. module: pob
+#: model:ir.ui.menu,name:pob.menu_pob_config
+msgid "POB"
+msgstr "POB"
+
+#. module: pob
+#: code:addons/pob/pob.py:146
+#, python-format
+msgid "POB Configuration"
+msgstr "Configuración de POB "
+
+#. module: pob
+#: model:ir.module.category,description:pob.module_pob_connector_security_category
+msgid "POB Connector"
+msgstr "POB Conector"
+
+#. module: pob
+#: view:pob.config.settings:pob.view_pob_config_settings
+msgid "POB Extra Features"
+msgstr " POB  Characteristicas  Extra"
+
+#. module: pob
+#: model:ir.ui.menu,name:pob.menu_id_prestashop_mapping
+msgid "POB Mapping Tables"
+msgstr " POB  Tablas de  Asignación"
+
+#. module: pob
+#: view:prestashop.configure:pob.prestashop_configure_form
+msgid "POB Settings"
+msgstr " Ajustes de POB"
+
+#. module: pob
+#: view:pob.config.settings:pob.view_pob_config_settings
+msgid "POB: Extensions"
+msgstr "POB: Extensiones"
+
+#. module: pob
+#: model:ir.model,name:pob.model_res_partner
+msgid "Partner"
+msgstr "socio"
+
+#. module: pob
+#: model:ir.model,name:pob.model_stock_picking
+msgid "Picking List"
+msgstr " Lista de Remitos"
+
+#. module: pob
+#: selection:sale.order,channel:0
+msgid "PrestaShop"
+msgstr "PrestaShop"
+
+#. module: pob
+#: model:ir.module.category,name:pob.module_pob_connector_security_category
+msgid "PrestaShop Bridge"
+msgstr "PrestaShop Puente"
+
+#. module: pob
+#: view:product.product:pob.pob_product_update_view
+#: field:product.product,product_mapping_id:0
+#: view:product.template:pob.pob_product_template_update_view
+#: field:product.template,template_mapping_id:0
+msgid "PrestaShop Information"
+msgstr " PrestaShop Información"
+
+#. module: pob
+#: view:prestashop.configure:pob.prestashop_configure_form
+msgid "PrestaShop Language"
+msgstr " PrestaShop Lengua"
+
+#. module: pob
+#: model:ir.ui.menu,name:pob.login_menu_id
+msgid "PrestaShop LogIn Info"
+msgstr "PrestaShop Información de iniciar sessión"
+
+#. module: pob
+#: view:prestashop.configure:pob.prestashop_configure_form
+msgid "PrestaShop LogIn Information"
+msgstr "PrestaShop Información de iniciar sessión"
+
+#. module: pob
+#: model:ir.actions.act_window,name:pob.prestashop_product_action
+#: view:prestashop.product:pob.prestashop_product_tree
+msgid "PrestaShop Product"
+msgstr "PrestaShop Producto"
+
+#. module: pob
+#: model:ir.actions.act_window,name:pob.prestashop_product_template_action
+msgid "PrestaShop Product Template"
+msgstr "PrestaShop  Pantilla de Producto"
+
+#. module: pob
+#: view:prestashop.product.template:pob.prestashop_product_template_tree
+msgid "PrestaShop Product Templates"
+msgstr "PrestaShop  Pantilla de Producto"
+
+#. module: pob
+#: model:ir.ui.menu,name:pob.id_parent_prestashoperp
+msgid "PrestaShop-Bridge"
+msgstr "PrestaShop Puente"
+
+#. module: pob
+#: model:ir.actions.act_window,name:pob.prestashop_order_tree_action
+#: view:prestashop.order:pob.prestashop_order_tree
+msgid "PrestaShop-Odoo Mapping"
+msgstr "PrestaShop-Odoo  cartografía"
+
+#. module: pob
+#: field:prestashop.customer,presta_address_id:0
+msgid "PrestaShop`s Address Id"
+msgstr "PrestaShop`s Id de Derección"
+
+#. module: pob
+#: field:prestashop.product.attribute,presta_id:0
+#: field:prestashop.product.attribute.value,presta_attr_id:0
+msgid "PrestaShop`s Attribute Id"
+msgstr "PrestaShop`s  Id de Atributo"
+
+#. module: pob
+#: field:prestashop.product.attribute.value,presta_id:0
+msgid "PrestaShop`s Attribute Value Id"
+msgstr " PrestaShop`s  Id de Atributo valor"
+
+#. module: pob
+#: field:prestashop.category,presta_category_id:0
+msgid "PrestaShop`s Category Id"
+msgstr "PrestaShop`s  Id de categoría"
+
+#. module: pob
+#: field:prestashop.customer,presta_customer_id:0
+msgid "PrestaShop`s Customer Id"
+msgstr "PrestaShop`s  Id de cliente "
+
+#. module: pob
+#: field:prestashop.order,presta_id:0
+msgid "PrestaShop`s Order Id"
+msgstr "PrestaShop`s ID de Pedido"
+
+#. module: pob
+#: field:prestashop.product,presta_product_attr_id:0
+msgid "PrestaShop`s Product Attribute Id"
+msgstr "PrestaShop`s id de Atributo del Producto"
+
+#. module: pob
+#: field:prestashop.product,presta_product_id:0
+#: field:prestashop.product.template,presta_product_id:0
+msgid "PrestaShop`s Product Id"
+msgstr " PrestaShop`s id  del Producto"
+
+#. module: pob
+#: field:prestashop.configure,ps_language_id:0
+msgid "Prestashop Language"
+msgstr "Prestashop Lengua"
+
+#. module: pob
+#: model:ir.actions.act_window,name:pob.prestashop_configure_tree_action
+#: view:prestashop.configure:pob.prestashop_configure_form
+#: view:prestashop.configure:pob.prestashop_configure_tree
+msgid "Prestashop LogIn Information"
+msgstr " PrestaShop Información de iniciar sessión"
+
+#. module: pob
+#: model:ir.actions.act_window,name:pob.prestashop_product_attribute_action
+msgid "Prestashop Product Attribute"
+msgstr " PrestaShop`s  Atributo del Producto"
+
+#. module: pob
+#: model:ir.actions.act_window,name:pob.prestashop_product_attribute_value_action
+msgid "Prestashop Product Attribute Value"
+msgstr "Prestashop Producto Attributo Valor"
+
+#. module: pob
+#: model:ir.actions.act_window,name:pob.prestashop_category_tree_action
+msgid "Prestashop category"
+msgstr "Prestashop categoría"
+
+#. module: pob
+#: model:ir.actions.act_window,name:pob.prestashop_customer_tree_action
+msgid "Prestashop customer"
+msgstr "Prestashop cliente"
+
+#. module: pob
+#: field:account.invoice,ps_inv_ref:0
+msgid "Prestashop invoice Ref."
+msgstr "Prestashop Referncia de Factura"
+
+#. module: pob
+#: model:ir.actions.act_window,name:pob.prestashoperp_sync_now_action
+msgid "Prestashoperp Synchronization Now"
+msgstr "Ahora Prestashoperp Synchronización  "
+
+#. module: pob
+#: model:ir.model,name:pob.model_product_product
+#: model:ir.ui.menu,name:pob.prestashop_product_menu_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: pob
+#: model:ir.model,name:pob.model_product_attribute
+#: view:prestashop.product.attribute:pob.prestashop_product_attribute_form
+#: view:prestashop.product.attribute:pob.prestashop_product_attribute_tree
+#: field:prestashop.product.attribute,name:0
+msgid "Product Attribute"
+msgstr "Atributo de producto"
+
+#. module: pob
+#: model:ir.ui.menu,name:pob.product_attribute_mapping_menu_id
+msgid "Product Attribute "
+msgstr " Atributo de producto"
+
+#. module: pob
+#: view:prestashop.product.attribute.value:pob.prestashop_product_attribute_value_form
+#: view:prestashop.product.attribute.value:pob.prestashop_product_attribute_value_tree
+#: field:prestashop.product.attribute.value,name:0
+msgid "Product Attribute Value"
+msgstr " Atributo Valor de producto"
+
+#. module: pob
+#: model:ir.ui.menu,name:pob.product_attribute_value_mapping_menu_id
+msgid "Product Attribute Value "
+msgstr "  Atributo Valor de producto"
+
+#. module: pob
+#: model:ir.model,name:pob.model_product_category
+msgid "Product Category"
+msgstr "Categoría de Producto"
+
+#. module: pob
+#: field:prestashop.product,name:0 field:prestashop.product,product_name:0
+#: field:prestashop.product.template,name:0
+msgid "Product Name"
+msgstr " Nombre de Producto"
+
+#. module: pob
+#: model:ir.model,name:pob.model_product_template
+#: model:ir.ui.menu,name:pob.prestashop_product_template_menu_id
+msgid "Product Template"
+msgstr "Plantilla de Producto"
+
+#. module: pob
+#: code:addons/pob/extra_functions.py:393
+#, python-format
+msgid "Quantity cannot be negative."
+msgstr " La Cantidad no puede ser en negativo"
+
+#. module: pob
+#: field:pob.config.settings,module_pob_extension_stock:0
+msgid "Real-Time Stock Synchronization"
+msgstr " Real Tiempo sincronización de inventario"
+
+#. module: pob
+#: field:prestashop.configure,api_url:0
+msgid "Root URL"
+msgstr "Root URL"
+
+#. module: pob
+#: code:addons/pob/pob.py:61 code:addons/pob/pob.py:76
+#, python-format
+msgid "Root url must in the format ( base url of your prestashop + 'api' )"
+msgstr "Root url  debe en formato ( base url de su  prestashop + 'api' )"
+
+#. module: pob
+#: model:ir.model,name:pob.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de Ventas"
+
+#. module: pob
+#: view:pob.config.settings:pob.view_pob_config_settings
+msgid ""
+"Select Service Type Product to be used by POB, when exporting Order from "
+"Pretsashop to Odoo."
+msgstr ""
+" seleccionar Tipo de Servicio a usará por POB , cuando han exportado los "
+"pedido desde Prestashop a Odoo"
+
+#. module: pob
+#: view:pob.config.settings:pob.view_pob_config_settings
+msgid "Service Products"
+msgstr " Prouctos Servicio"
+
+#. module: pob
+#: help:pob.config.settings,pob_delivery_product:0
+msgid "Service type product used for Delivery purposes."
+msgstr "Producto de Tipo servicio han usado para Propósitos de entrega."
+
+#. module: pob
+#: help:pob.config.settings,pob_discount_product:0
+msgid "Service type product used for Discount purposes."
+msgstr " Producto de Tipo servicio han usado para Propósitos de descuento ."
+
+#. module: pob
+#: code:addons/pob/pob.py:51 code:addons/pob/pob.py:69
+#, python-format
+msgid "Sorry, Only one active connection is allowed."
+msgstr " solo , Permite un activo conexión "
+
+#. module: pob
+#: code:addons/pob/extra_functions.py:56
+#: code:addons/pob/override_functions.py:605 code:addons/pob/pob.py:106
+#: code:addons/pob/pob.py:253 code:addons/pob/pob.py:297
+#: code:addons/pob/pob.py:368 code:addons/pob/pob.py:587
+#: code:addons/pob/pob.py:637 code:addons/pob/pob.py:872
+#: code:addons/pob/pob.py:1145 code:addons/pob/pob.py:1280
+#, python-format
+msgid "Sorry, only one Active Configuration setting is allowed."
+msgstr "  solo , Permite activo  configuaración de ajustes "
+
+#. module: pob
+#: field:prestashop.configure,pob_default_stock_location:0
+msgid "Stock Location"
+msgstr " Localización de Inventario"
+
+#. module: pob
+#: model:ir.ui.menu,name:pob.menu_id_pob_sync
+msgid "Synchronisation"
+msgstr " sinconización"
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid "Synchronization Form"
+msgstr "  sinconización Forma"
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid "Synchronize  Attribute and Values"
+msgstr "sincronizar Atributos y Valor"
+
+#. module: pob
+#: model:ir.ui.menu,name:pob.sync_now_menu_id
+msgid "Synchronize Now"
+msgstr " Sincronizar Ahora"
+
+#. module: pob
+#: model:ir.actions.server,name:pob.action_multiple_synchronize_categories
+#: model:ir.actions.server,name:pob.action_multiple_synchronize_products
+msgid "Synchronize with Prestashop"
+msgstr "  Sincronizar con  Prestashop"
+
+#. module: pob
+#: code:addons/pob/pob.py:1332
+#, python-format
+msgid "Template Must have a Default Category"
+msgstr " La Pantilla debe  tener una categoría defecto"
+
+#. module: pob
+#: field:prestashop.product.template,template_name:0
+msgid "Template Name"
+msgstr "Nombre de pantilla"
+
+#. module: pob
+#: view:prestashop.configure:pob.prestashop_configure_form
+msgid "Test Connection"
+msgstr " conexión de Prueba"
+
+#. module: pob
+#: code:addons/pob/pob.py:195
+#, python-format
+msgid "Test Result"
+msgstr "Resultado de la prueba"
+
+#. module: pob
+#: code:addons/pob/pob.py:89
+#, python-format
+msgid "There is no category found on your Openerp ! Please create one."
+msgstr " No encontra categoría en su Openerp  ! Por favor crear un"
+
+#. module: pob
+#: code:addons/pob/pob.py:83
+#, python-format
+msgid "There is no default language for the current user's company!"
+msgstr " Hay no defecto lengua para  compaña de usuario actual !"
+
+#. module: pob
+#: view:product.template:pob.pob_product_template_update_view
+msgid "This note will be displayed on requests for quotation..."
+msgstr "Estas notas serán mostradas en las solicitudes de presupuesto (SdP)..."
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid "Update  Products"
+msgstr " Actualizar Producto"
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid "Update Categories"
+msgstr "  Actualizar  Categoría"
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid "Update Products"
+msgstr "  Actualizar Producto"
+
+#. module: pob
+#: field:prestashop.category,need_sync:0 field:prestashop.customer,need_sync:0
+#: field:prestashop.product,need_sync:0
+#: field:prestashop.product.attribute,need_sync:0
+#: field:prestashop.product.attribute.value,need_sync:0
+#: field:prestashop.product.template,need_sync:0
+msgid "Update Required"
+msgstr "Actualizar necesario"
+
+#. module: pob
+#: view:prestashoperp.sync.now:pob.prestashoperp_sync_now_form
+msgid ""
+"Updating itmes will update only those items which are already present on the "
+"Prestashop i.e \n"
+"                                    have entry in the POB Mapping Tables at "
+"Odoo`s end."
+msgstr ""
+" Esta actualizando artículos , solo actualizará estos artículos quién esta "
+"disponible en Prestashop i.e \n"
+"                                                     Tiene entrega en POB  "
+"Mapping Tablas en Odoo`s ."
+
+#. module: pob
+#: model:res.groups,name:pob.group_pob_connector_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: pob
+#: code:addons/pob/extra_functions.py:393 code:addons/pob/pob.py:61
+#: code:addons/pob/pob.py:76
+#, python-format
+msgid "Warning!"
+msgstr " advertencia"
+
+#. module: pob
+#: selection:prestashop.category,need_sync:0
+#: selection:prestashop.customer,need_sync:0
+#: selection:prestashop.product,need_sync:0
+#: selection:prestashop.product.attribute,need_sync:0
+#: selection:prestashop.product.attribute.value,need_sync:0
+#: selection:prestashop.product.template,need_sync:0
+msgid "Yes"
+msgstr " si"
+
+#. module: pob
+#: view:prestashop.configure:pob.prestashop_configure_form
+msgid ""
+"You need to select corresponding Language of Prestashop for product Update."
+msgstr ""
+" usted necesita a seleccionar una lengua correspondiente de Prestashop para "
+"actualizar del Producto"
+
+#. module: pob
+#: view:product.template:pob.pob_product_template_update_view
+msgid "describe the product characteristics..."
+msgstr "Describa aquí las características del producto..."
+
+#. module: pob
+#: view:prestashop.configure:pob.prestashop_configure_form
+#: help:prestashop.configure,api_url:0
+msgid "e.g:-'http://localhost:8080/api'"
+msgstr "e.g:-'http://localhost:8080/api'"
+
+#. module: pob
+#: view:product.template:pob.pob_product_template_update_view
+msgid "note to be displayed on quotations..."
+msgstr "Notas a ser mostradas en los presupuestos..."
+
+#. module: pob
+#: view:pob.config.settings:pob.view_pob_config_settings
+msgid "or"
+msgstr "o"
+
+#. module: pob
+#: model:ir.actions.act_window,name:pob.pob_message_action
+msgid "pob.message"
+msgstr "pob.mensaje"
+
+#. module: pob
+#: view:pob.config.settings:pob.view_pob_config_settings
+msgid "used for Delivery/Shipping purposes"
+msgstr " utilizados para fines de entrega/envío"
+
+#. module: pob
+#: view:pob.config.settings:pob.view_pob_config_settings
+msgid "used for Discount purposes"
+msgstr "  utilizados para Descuento de efectos"

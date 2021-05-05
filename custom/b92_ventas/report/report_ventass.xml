@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="report_ventas_b92">
+    <t t-call="report.html_container">
+        <t t-call="report.internal_layout">
+            <div class="page">
+                <h2>Resumen de Pedidos de Venta: <span t-esc="( datetime.datetime.strptime(data['fecha_wizard'], '%Y-%m-%d')).strftime('%d/%m/%Y')" /></h2>
+                <table class="table table-condensed mb32">
+                    <thead>
+                        <tr>
+                            <th>
+                                <strong>Diario</strong>
+                            </th>
+                            <th style="padding-left: 120px;">
+                                <strong>Total Transacciones</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-set="test_vv" t-value="0"/>
+                        <t t-foreach='metodo' t-as='p'>
+                            <t t-set="test_v" t-value="0"/>
+                            <tr>
+                                <td><span t-field="p.name"/></td>
+                                <t t-foreach='doc_ids' t-as='xl'>
+                                    <t t-if="p.id == xl.payment_mode_id.id">
+                                         <t t-set="test_v" t-value="test_v+xl.amount_total" />
+                                    </t>
+                                </t>
+                                <td align="right" style="padding-right: 200px;"><span t-esc="test_v" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}" /></td>
+                                <t t-set="test_vv" t-value="test_vv+test_v" />
+                            </tr>
+                        </t>
+                        <tr>
+                            <td></td>
+                            <td align="right" style="padding-right: 200px;"><b><span t-esc="test_vv" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}" /></b></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>Detalles del Resumen</h4>
+                <table class="table table-condensed">
+                    <t t-set="test_variable" t-value="0"/>
+                    <thead>
+                        <tr>
+                            <th width="20%">Fecha</th>
+                            <th width="20%">Pedido</th>
+                            <th width="40%">Cliente</th>
+                            <th width="20%">Usuario</th>
+                            <th width="20%">Importe</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach='doc_ids' t-as='xx'>
+                            <tr>
+                                <td><span t-esc="( datetime.datetime.strptime(data['fecha_wizard'], '%Y-%m-%d')).strftime('%d/%m/%Y')" /></td>
+                                <td><span t-field="xx.name"/></td>
+                                <td><span t-field="xx.partner_id"/></td>
+                                <td><span t-field="xx.user_id"/></td>
+                                <td align="right" style="padding-right: 60px;"><span t-field="xx.amount_total"/></td>
+                                <t t-set="test_variable" t-value="test_variable+xx.amount_total" />
+                            </tr>
+                        </t>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td align="right" style="padding-right: 60px;">
+                                <b><span t-esc="test_variable" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}" /></b>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </t>
+</template>
+
+<report
+    id="action_report_b92_ventas"
+    string="Informe de Ventas"
+    model="sale.order"
+    report_type="qweb-pdf"
+    name="b92_ventas.report_ventas_b92"
+    file="b92_ventas.report_ventas_b92"
+/>
+</odoo>

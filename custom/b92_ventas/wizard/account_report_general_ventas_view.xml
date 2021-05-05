@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_report_general_ventas_vieww" model="ir.ui.view">
+        <field name="name">Informe de Ventas Prestashop</field>
+        <field name="model">account.report.general.ventas</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                <field name="initial_date"/>
+                <newline/>
+                </group>
+                <footer>
+                <button name="print_report_ventas" string="Imprimir" type="object" default_focus="1" class="oe_highlight"/>
+                or
+                <button string="Cancel" class="oe_link" special="cancel" />
+            </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_account_general_ledger_menu_ventas" model="ir.actions.act_window">
+        <field name="name">Informe de Ventas</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.report.general.ventas</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="account_report_general_ventas_vieww"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+        id="menu_general_ledger_ventas"
+        name="Informe de Ventas"
+        parent="sales_team.menu_sale_report"
+        action="action_account_general_ledger_menu_ventas"
+
+       />
+
+</odoo>

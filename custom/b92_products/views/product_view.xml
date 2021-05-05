@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_product_ficha_ext" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='sales']" position="after">
+                <page string="Ficha" name="ficha">
+                    <group name="descriptionficha">
+                        <separator string="Descripción Larga" colspan="4"/>
+                        <field name="blm_description_large" colspan="4" nolabel="1" />
+                    </group>
+                    <group name="tipsficha">
+                        <separator string="Tips" colspan="4"/>
+                        <field name="blm_tips" colspan="4" nolabel="1" />
+                    </group>
+                    <group name="ingredientesficha">
+                        <separator string="Ingredientes" colspan="4"/>
+                        <field name="blm_ingredients" colspan="4" nolabel="1" />
+                    </group>
+                </page>
+                <page string="Meta-Datos" name="metadata">
+                    <group name="plantillameta">
+                        <separator string="Metadatos Producto" colspan="4"/>
+                        <field name="blm_plantilla" colspan="4" nolabel="1" />
+                    </group>
+                 </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_product_category_ext" model="ir.ui.view">
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='first']" position="after">
+                <group name="plantillacateg">
+                    <separator string="Metadatos Categoria" colspan="4"/>
+                    <field name="blm_categoria" colspan="4" nolabel="1" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_product_brand_ext" model="ir.ui.view">
+        <field name="model">product.brand</field>
+        <field name="inherit_id" ref="product_brand_analysis.product_brand_template_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="after">
+                <group name="plantillabrand">
+                    <separator string="Metadatos Marca" colspan="4"/>
+                    <field name="blm_marca" colspan="4" nolabel="1" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

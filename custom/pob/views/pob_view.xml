@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>        
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Prestashop Login Info~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <record id="prestashop_configure_form" model="ir.ui.view">
+            <field name="name">prestashop.configure.form</field>
+            <field name="model">prestashop.configure</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Prestashop LogIn Information" version="7.0">
+                    <header>
+                        <button name="test_connection" string="Test Connection" type="object" class="oe_highlight" icon="fa-pencil-square-o"/>
+                    </header>
+                    <sheet>
+                        <div attrs="{'invisible':[('ps_language_id','not in',[False,-1,0])]}">
+                            <p style="color:red">
+                                <b>NOTE:</b> You need to select corresponding Language of Prestashop for product Update.
+                            </p>
+                        </div>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object"
+                                    class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button"
+                                    options='{"terminology": "active"}'/>
+                            </button>
+                        </div>
+                        <separator string="PrestaShop LogIn Information"/>
+                        <group name="logininfo">
+                            <!-- <field name="active" widget="boolean_button"
+                                    options='{"terminology": "archive"}'/> -->
+                            <field name="api_url" required="1" placeholder="e.g:-'http://localhost:8080/api'"/>
+                            <field name="api_key" required="1" placeholder="A 32 bit key(e.g:-'BVWPFFYBT97WKM959D7AVVD0M4815Y1L')" />
+                        </group>
+                        <notebook>
+                            <page string="POB Settings" name="POB Settings">
+                                <group>
+                                    <field name="pob_default_stock_location" widget="selection"/>
+                                </group>
+                                <group>
+                                    <field name="pob_default_lang" widget="selection"/>
+                                </group>
+                                <group>
+                                    <field name="pob_default_category" widget="selection"/>
+                                    
+                                </group>
+                                <group>
+                                    <field name="payment_term" widget="selection"/>
+                                </group>
+                                <group>
+                                    <field name="salesperson" widget="selection"/>
+                                </group>
+                                <group>
+                                    <field name="team_id" widget="selection"/>
+                                </group>
+                                 
+                                <span>
+                                    <label for="ps_language_id" string="PrestaShop Language"/>
+                                    
+                                    <span>
+                                        <field name="ps_language_id" widget="selection" class='oe_inline'/>
+                                    </span>
+                                    <span>
+                                        <button name="refresh_list" string="Fetch PrestaShop Language" type="object" class="oe_highlight"/>
+                                    </span>
+                                </span>
+                            </page>
+                            <page string="Orders Configuration">
+                                <separator string="Default Configuration for orders"/>
+                                <p>
+                                    Select order status to be updated to Prestashop from Odoo
+                                </p>
+                                <group>
+                                    <field name="delivered" />
+                                </group>
+                                <group>
+                                    <field name="invoiced" />
+                                </group>
+                                <group>
+                                    <field name="cancelled"/>
+                                </group>
+                            </page>
+                            <page string="Marketplace Warehouse">
+                                <separator string="Marketplace Warehouse"/>
+                                <p>
+                                    Select warehouse for order  shipped by marketplace from Prestashop to Odoo
+                                </p>
+                                <group>
+                                    <field name="marketplace_warehouse" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="prestashop_configure_tree" model="ir.ui.view">
+            <field name="name">prestashop.configure.form</field>
+            <field name="model">prestashop.configure</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Prestashop LogIn Information">
+                    <field name="team_id"/>
+                    <field name="api_url"/>
+                    <field name="api_key"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="prestashop_configure_tree_action" model="ir.actions.act_window">
+            <field name="name">Prestashop LogIn Information</field>
+            <field name="res_model">prestashop.configure</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="prestashop_configure_tree"/>
+        </record>
+
+
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~prestashop_product_attribute~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+        <record id="prestashop_product_attribute_tree" model="ir.ui.view">
+            <field name="name">prestashop_product_attribute_tree.tree</field>
+            <field name="model">prestashop.product.attribute</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Product Attribute"  colors="red:need_sync=='yes'" edit="false" create="false">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="erp_id"/>
+                    <field name="presta_id"/>
+                    <field name="need_sync"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="prestashop_product_attribute_action" model="ir.actions.act_window">
+            <field name="name">Prestashop Product Attribute</field>
+            <field name="res_model">prestashop.product.attribute</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="prestashop_product_attribute_tree"/>
+        </record>
+        <!--~~~~~~~~~~~~~~~~~~~~~~~prestashop_product_attribute_value~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+ 
+        <record id="prestashop_product_attribute_value_tree" model="ir.ui.view">
+            <field name="name">prestashop_product_attribute_value_tree.tree</field>
+            <field name="model">prestashop.product.attribute.value</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Product Attribute Value"  colors="red:need_sync=='yes'" edit="false" create="false"> 
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="erp_id"/>
+                    <field name="presta_id"/>
+                    <field name="erp_attr_id"/> 
+                    <field name="presta_attr_id"/>
+                    <field name="need_sync"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="prestashop_product_attribute_value_action" model="ir.actions.act_window">
+            <field name="name">Prestashop Product Attribute Value</field>
+            <field name="res_model">prestashop.product.attribute.value</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="prestashop_product_attribute_value_tree"/>
+        </record>
+        
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~prestashop_product~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <record id="prestashop_product_tree" model="ir.ui.view">
+            <field name="name">prestashop_product.tree</field>
+            <field name="model">prestashop.product</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="PrestaShop Product"  colors="red:need_sync=='yes'" edit="false" create="false">  
+                    <field name="id"/>  
+                    <field name="product_name"/>
+                    <field name="erp_product_id"/>  
+                    <field name="erp_template_id"/>
+                    <field name="presta_product_id"/>
+                    <field name="presta_product_attr_id"/>
+                    <field name="need_sync"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="prestashop_product_action" model="ir.actions.act_window">
+            <field name="name">PrestaShop Product</field>
+            <field name="res_model">prestashop.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="prestashop_product_tree"/>
+        </record>
+
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~prestashop_product_template~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~--> 
+        <record id="prestashop_product_template_tree" model="ir.ui.view">
+            <field name="name">prestashop_product_template.tree</field>
+            <field name="model">prestashop.product.template</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="PrestaShop Product Templates"  colors="red:need_sync=='yes'" edit="false" create="false">    
+                    <field name="id"/>  
+                    <field name="template_name"/>
+                    <field name="erp_template_id"/> 
+                    <field name="presta_product_id"/>
+                    <field name="default_attribute"/>
+                    <field name="need_sync"/>
+                </tree>
+            </field>    
+        </record>
+
+        <record id="prestashop_product_template_action" model="ir.actions.act_window">
+            <field name="name">PrestaShop Product Template</field>
+            <field name="res_model">prestashop.product.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="prestashop_product_template_tree"/>
+        </record>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~prestashop_customer~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <record id="prestashop_customer_tree" model="ir.ui.view">
+            <field name="name">prestashop.customer.form</field>
+            <field name="model">prestashop.customer</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Customers" create="false" edit="false" >
+                    <field name="id"/>
+                    <field name="customer_name"/>
+                    <field name="erp_customer_id"/>
+                    <field name="presta_customer_id"/>
+                    <field name="presta_address_id"/>
+                    <field name="need_sync" />
+                </tree>
+            </field>            
+        </record>
+
+        <record id="prestashop_customer_tree_action" model="ir.actions.act_window">
+            <field name="name">Prestashop customer</field>
+            <field name="res_model">prestashop.customer</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="prestashop_customer_tree"/>
+        </record>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~prestashop_category~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+        <record id="prestashop_category_tree" model="ir.ui.view">
+            <field name="name">prestashop.category.form</field>
+            <field name="model">prestashop.category</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Categories" colors="red:need_sync=='yes'" create="false" edit="false">
+                    <field name="id"/>
+                    <field name="category_name"/>
+                    <field name="erp_category_id"/>
+                    <field name="presta_category_id"/>
+                    <field name="need_sync"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="prestashop_category_tree_action" model="ir.actions.act_window">
+            <field name="name">Prestashop category</field>
+            <field name="res_model">prestashop.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="prestashop_category_tree"/>
+        </record>
+
+        <!-- prestashop_odoo_mapping -->
+
+        <record id="wk_order_tree" model="ir.ui.view">
+            <field name="name">wk.order.form</field>
+            <field name="model">wk.order.mapping</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="PrestaShop-Odoo Mapping" create="false" edit="false">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="erp_order_id"/>
+                    <field name="ecommerce_order_id"/>
+                    <field name="ecommerce_channel"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="wk_order_tree_action" model="ir.actions.act_window">
+            <field name="name">PrestaShop-Odoo Mapping</field>
+            <field name="res_model">wk.order.mapping</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="wk_order_tree"/>
+        </record>
+
+                <!-- prestashoperp_sync_now -->
+
+        <record id="prestashoperp_sync_now_form" model="ir.ui.view">
+            <field name="name">prestashoperp.sync.now.form</field>
+            <field name="model">prestashoperp.sync.now</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Synchronization Form" version="7.0" save="false" or="false" discard="false">
+                <sheet>
+                <separator string="Click to Export / Update data on PrestaShop :"/>
+                <p class="oe_grey oe_inline">
+                                    By clicking on the buttons,
+                                    you will initiate the synchronizations
+                                    with Prestashop.
+                </p>
+                <newline/>
+                    <group name="d" col="4">
+                        <label for="id" string="Update Products"/>
+                            <div>
+                                <button name="update_product_prestashop" string="  Update  Products  " type="object"  class="oe_highlight" help="It will update,if any(Is Synchronized=no), all your exported products on Prestashop from Odoo"/>
+                                <label for="update_product_prestashop"/>
+                            </div>
+                        <label for="id" string="Export Products"/>
+                            <div>
+                                <button name="export_all_products" string="  Export   Products  " type="object"  class="oe_highlight" help="It will export all your new products on Odoo to PrestaShop"/>
+                                <label for="export_all_products"/>
+                            </div>
+                        <label for="id" string="Update Categories"/>
+                            <div>
+                                <button name="update_prest_categories" string="Update Categories" type="object" class="oe_highlight" help="It will update,if any(Is Synchronized=no), all your exported categories on Prestashop from Odoo"/>
+                                <label for="update_prest_categories"/>
+                            </div>          
+                        <label for="id" string="Export Categories"/>
+                            <div>
+                                <button name="export_categories" string="Export Categories" type="object" class="oe_highlight" help="It will export all your new categories on Odoo to PrestaShop"/>
+                                <label for="export_categories"/>
+                            </div>
+<!--                         <label for="id" string="Update Customers and Addresses"/>
+                            <div >
+                                <button name="update_all_customers" string="  Update Customer " type="object"  class="oe_highlight" help="It will export all your new products on Odoo to PrestaShop"/>
+                                <label for="update_all_customer"/>
+                            </div>   -->    
+                        <label for="id" string="Export Attribute and Values"/>  
+                            <div>
+                                <button name="export_attributes_and_their_values" string="Synchronize  Attribute and Values" type="object"  class="oe_highlight" help="Export / Update Dimension and their Values to Prestashop"/>
+                                <label for="export_attributes_and_their_values"/>
+                            </div>
+                    </group>
+                    <separator string="NOTE :"/>
+                    <p class="oe_grey oe_inline">
+                                    Exporting items will export all your items to PrestaShop<br />
+                                    Updating itmes will update only those items which are already present on the Prestashop i.e 
+                                    have entry in the POB Mapping Tables at Odoo`s end.
+                    </p>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="prestashoperp_sync_now_action" model="ir.actions.act_window">
+            <field name="name">Prestashoperp Synchronization Now</field>
+            <field name="res_model">prestashoperp.sync.now</field>
+            <field name="view_type">form</field>
+            <field name="target">inline</field>          
+            <field name="view_id" ref="prestashoperp_sync_now_form"/>
+        </record>
+
+        <record id="pob_product_template_update_view" model="ir.ui.view">
+            <field name="name">pob_product_template_update_view.form</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="8" />
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <notebook position="inside" >
+                    <page string="Prestashop Categories" groups="pob.group_pob_connector_user,pob.group_pob_connector_manager">
+                        <field name="extra_categ_ids" nolabel="1" colspan="2">
+                            <tree string="PrestaShop categories" editable="bottom">
+                                <field name="name"/>
+                            </tree> 
+                        </field>
+                    </page> 
+                </notebook>
+                <field name="description_sale" position="replace">
+                    <field name="description_sale" placeholder="note to be displayed on quotations..."  widget="html" nolabel="1"/>
+                </field>
+            </field>
+        </record>
+
+         <record id="pob_product_update_view" model="ir.ui.view">
+            <field name="name">pob_product_update_view.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <notebook position="inside" >
+                    <page string="PrestaShop Information" attrs="{'invisible':[('product_mapping_id','=',False)]}" groups="pob.group_pob_connector_user,pob.group_pob_connector_manager">
+                        <field name="product_mapping_id" nolabel="1" colspan="2" >
+                            <tree string="PrestaShop Information">
+                                <field name="erp_template_id"/>
+                                <field name="erp_product_id"/>
+                                <field name="presta_product_id"/>
+                                <field name="presta_product_attr_id"/>
+                                <field name="need_sync"/>
+                            </tree> 
+                        </field>
+                    </page> 
+                </notebook>
+            </field>
+        </record>
+
+        <!-- prestashop.payment.mode tree view -->
+        <record id="prestashop_payment_mode_tree_view" model="ir.ui.view">
+            <field name="name">prestashop.payment.mode.view.tree</field>
+            <field name="model">prestashop.payment.mode</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="presta_payment"/>
+                    <field name="payment_mode_id" options="{'no_create_edit': True}"
+                    />
+                </tree>
+            </field>
+        </record>
+
+        <!-- prestashop.payment.mode action window -->
+        <record id="prestashop_payment_mode_action" model="ir.actions.act_window">
+            <field name="name">prestashop.payment.mode.action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">prestashop.payment.mode</field>
+            <field name="view_mode">tree</field>
+            <field name="view_type">form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                </p>
+            </field>
+        </record>
+        
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Main-Menu~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <menuitem id="id_parent_prestashoperp" name="PrestaShop-Bridge" groups="pob.group_pob_connector_user,pob.group_pob_connector_manager"/>
+
+        <menuitem  id="menu_id_pob_sync" name="Synchronisation" parent="id_parent_prestashoperp" sequence="1"/>
+            <menuitem  id="sync_now_menu_id" name="Synchronize Now" parent="menu_id_pob_sync" action="prestashoperp_sync_now_action" sequence="1"/>
+
+        <menuitem  id="menu_id_prestashop_mapping" name="POB Mapping Tables" parent="id_parent_prestashoperp" sequence="2"/>
+            <menuitem  id="order_mapping_menu_id" name="Orders Mapping" parent="menu_id_prestashop_mapping" action="wk_order_tree_action" sequence="1"/>
+            <menuitem  id="customer_mapping_menu_id" name="Customer Mapping" parent="menu_id_prestashop_mapping" action="prestashop_customer_tree_action" sequence="2"/>
+            <menuitem  id="prestashop_product_template_menu_id" name="Product Template" parent="menu_id_prestashop_mapping" action="prestashop_product_template_action" sequence="3"/>
+            <menuitem  id="prestashop_product_menu_id" name="Product" parent="menu_id_prestashop_mapping" action="prestashop_product_action" sequence="4"/>
+            <menuitem  id="product_attribute_mapping_menu_id" name="Product Attribute " parent="menu_id_prestashop_mapping" action="prestashop_product_attribute_action" sequence="5"/>
+            <menuitem  id="product_attribute_value_mapping_menu_id" name="Product Attribute Value " parent="menu_id_prestashop_mapping" action="prestashop_product_attribute_value_action" sequence="6"/>   
+            <menuitem  id="category_mapping_menu_id" name="Category Mapping" parent="menu_id_prestashop_mapping" action="prestashop_category_tree_action" sequence="7"/>
+            <menuitem  id="payment_mode_mapping_menu_id" name="Payment Mode Mapping" parent="menu_id_prestashop_mapping" action="prestashop_payment_mode_action" sequence="8"/>
+        <menuitem  id="menu_id_core_setting" name="Core Settings" parent="id_parent_prestashoperp" sequence="4"/>
+            <menuitem  id="login_menu_id" name="PrestaShop LogIn Info" parent="menu_id_core_setting"  action="prestashop_configure_tree_action" sequence="1"/>
+
+    </data>
+</odoo>

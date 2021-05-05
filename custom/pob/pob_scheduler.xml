@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		  <record id="action_multiple_synchronize_products" model="ir.actions.server">
+        <field name="name">Synchronize with Prestashop</field>
+        <field name="model_id" ref="model_product_product"/>
+        <field name="state">code</field>
+        <field name="code">
+				action= env['prestashoperp.sync.now'].action_multiple_synchronize_products(1)
+        </field>
+    </record>
+
+    <record id="ir_open_multiple_synchronize_products" model="ir.values">
+        <field name="model_id" ref="model_product_product" />
+        <field name="name">Synchronize with Prestashop</field>
+        <field name="key2">client_action_multi</field>
+        <field eval="action_multiple_synchronize_products" name="value"/>
+        <field name="key">action</field>
+        <field name="model">product.product</field>
+    </record>
+<!--         <record id="action_multiple_synchronize_products" model="ir.actions.server">
+            <field name="name">Synchronize with Prestashop</field>
+            <field name="model_id" ref="model_product_product"/>
+            <field name="state">code</field>
+            <field name="code">action = env['prestashoperp.sync.now'].action_multiple_synchronize_products()</field>
+        </record>
+
+        <record id="ir_open_multiple_synchronize_products" model="ir.values">
+            <field eval="'product.product'" name="model"/>
+            <field name="name">Synchronize with Prestashop</field>
+            <field eval="action_multiple_synchronize_products" name="value"/>
+            <field eval="True" name="object"/>
+        </record>   -->
+
+	</data>
+</odoo>
