@@ -95,7 +95,7 @@ class ProductoReport(models.Model):
     margen_generado = fields.Float(string='Margen Generado', readonly=True)
 
     def _select(self) :
-        select_str = """SELECT row_number() OVER (ORDER BY s.date_order) AS id,
+        select_str = """SELECT row_number() OVER (ORDER BY l.id) AS id,
     s.date_order AS fecha,
     l.product_id,
     round(sum(l.product_uom_qty / u.factor), 2) AS ctd_pedida,
@@ -138,10 +138,10 @@ class ProductoReport(models.Model):
      LEFT JOIN product_uom u ON u.id = l.product_uom
      LEFT JOIN product_pricelist pp ON s.pricelist_id = pp.id
   WHERE l.state::text = 'sale'::text
-  GROUP BY s.name, s.date_order, s.partner_id, s.state, xx.id, s.user_id, s.company_id, s.pricelist_id, s.create_date,
+  GROUP BY s.name, l.id, s.date_order, s.partner_id, s.state, xx.id, s.user_id, s.company_id, s.pricelist_id, s.create_date,
   l.product_id, p.product_tmpl_id, partner.id, partner.commercial_partner_id, l.price_unit, p.id, t.categ_id, t.id, pp.id
 UNION ALL
- SELECT row_number() OVER (ORDER BY s.date_order) + (( SELECT count(*) AS count
+ SELECT row_number() OVER (ORDER BY l.id) + (( SELECT count(*) AS count
            FROM sale_order_line)) AS id,
     s.date_order AS fecha,
     l.product_id,
@@ -185,7 +185,7 @@ UNION ALL
      LEFT JOIN product_uom u ON u.id = pt.uom_id
      LEFT JOIN pos_session ps ON s.session_id = ps.id
      LEFT JOIN pos_config pc ON ps.config_id = pc.id
-  GROUP BY s.name, s.date_order, s.partner_id, s.state, pt.id, pt.categ_id, xx.id, s.user_id, s.pricelist_id,
+  GROUP BY s.name, l.id, s.date_order, s.partner_id, s.state, pt.id, pt.categ_id, xx.id, s.user_id, s.pricelist_id,
   s.create_date, l.product_id, p.product_tmpl_id, part.id, part.commercial_partner_id, l.price_unit, p.id"""
         return select_str
 
